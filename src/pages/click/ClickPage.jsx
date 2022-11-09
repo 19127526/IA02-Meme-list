@@ -17,7 +17,6 @@ const ClickPage = () => {
   const [loading,setLoading]=useState(false);
 
   useEffect(() => {
-    if (click === false) return;
     setLoading(true);
     getMemeApi().then(async data => {
       setData(data.data.memes);
@@ -35,13 +34,13 @@ const ClickPage = () => {
             icon={<PoweroffOutlined />}
             style={{background:"#001529",border:"solid #001529",marginTop:"10px"}}
             loading={loading}
-            onClick={() => setClick(true)}
+            onClick={() => (setClick(!click),setData([]))}
           >
             Click me!
           </Button>
         </Col>
       </Row>
-      {click === true && data.length > 0 ?
+      {data.length > 0 ?
         <>
           <Row>
             {data &&
