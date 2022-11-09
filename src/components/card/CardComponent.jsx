@@ -1,27 +1,38 @@
 import Styles from "./Card.module.css"
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
+import {useSpring,animated} from "@react-spring/web";
+import {Image} from "antd";
 
 
 const CardComponent=({name,img,id})=>{
+  const styles = useSpring({
+    loop: true,
+    to: [
+      { opacity: 1, color: '#ffaaee' },
+      { opacity: 0, color: 'rgb(14,26,19)' },
+    ],
+    from: { opacity: 0, color: 'red' },
+  })
+
   return(
     <Card className={Styles.card} key={id}>
-      <Card.Img variant="top" src={img}/>
+      <Image.PreviewGroup>
+        <Image
+          style={{
+            margin:"7px -2px 0px  0px",
+            width: "100%",
+            height: "500px",
+            objectFit: "contain",
+          }}
+          src={img}
+        />
+      </Image.PreviewGroup>
       <Card.Body style={{textAlign:'center',paddingBottom:"0%"}}>
-        <Card.Title style={{color:"black"}}>{name}</Card.Title>
+        <Card.Title style={{borderTop: "1px solid black",borderBottom: "1px solid black"}}>
+          <animated.div style={styles}>{name}</animated.div>
+        </Card.Title>
       </Card.Body>
-      <Card.Body style={{display:"flex", textAlign:'center',paddingTop:"0%"}}>
-        <Container fluid="xl">
-          <Row>
-            {/*<Col xs={12} sm={6} md={12} lg={12} xl={12} xxl={12}>
-              <Button variant="outline-dark" className="m-1"  target="_blank">Vào trang github</Button>
-            </Col>
-            <Col xs={12} sm={6} md={12} lg={12} xl={12} xxl={12}>
-              <Button variant="outline-dark" className="m-1"}>Xem chi
-                tiết</Button>
-            </Col>*/}
-          </Row>
-        </Container>
-      </Card.Body>
+
     </Card>
   )
 }

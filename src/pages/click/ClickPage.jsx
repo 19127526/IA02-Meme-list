@@ -1,8 +1,10 @@
-import { Pagination} from "antd";
-import {useEffect, useLayoutEffect, useState} from "react";
+import {Pagination} from "antd";
+import {useEffect, useState} from "react";
 import {getMemeApi} from "../../apis/MemeApi/MemeApi";
 import CardComponent from "../../components/card/CardComponent";
 import {Col, Container, Row} from "react-bootstrap";
+import styles from './ClickPage.module.css'
+import Trail from "./Trail";
 
 const pageIndex = 6;
 
@@ -12,12 +14,15 @@ const ClickPage = () => {
   const [page, setPage] = useState(1);
   const currentIndexPage = pageIndex * page;
   const prevIndexPage = pageIndex * (page - 1);
+
+
   useEffect(() => {
     if (click === false) return;
     getMemeApi().then(async data => {
       setData(data.data.memes)
     })
   }, [click]);
+
   return (
     <Container>
       <Row>
@@ -27,20 +32,26 @@ const ClickPage = () => {
           </button>
         </Col>
       </Row>
-      {click === true &&data.length>0?
+
+
+      {click === true && data.length > 0 ?
         <>
-          <Row>
-            {data &&
-              data?.map((user, index) => {
-                  return prevIndexPage <= index && index < currentIndexPage ?
-                    <Col xs={12} sm={12} lg={4} md={6} xl={4}>
-                      <CardComponent name={user.name} img={user.url} id={user.id}/>
-                    </Col>
-                    : ""
+         {/* <div className={styles.container}>*/}
+            <Row>
+             {/* <Trail open={click}>*/}
+                {data &&
+                  data?.map((user, index) => {
+                      return prevIndexPage <= index && index < currentIndexPage ?
+                        <Col xs={12} sm={12} lg={4} md={6} xl={4} key={user.id}>
+                          <CardComponent name={user.name} img={user.url} id={user.id}/>
+                        </Col>
+                        : ""
+                    }
+                  )
                 }
-              )
-            }
-          </Row>
+              {/*</Trail>*/}
+            </Row>
+         {/* </div>*/}
           <Row className="m-2">
             <Col xs={12} sm={12} lg={12} md={12} xl={12} style={{display: "flex", justifyContent: "center"}}>
               <Pagination

@@ -37,7 +37,8 @@ h5 {
 .card img {
     margin:7px -2px 0px  0px;
     width: 100%;
-    object-fit: cover;
+    height: 500px;
+    object-fit: contain;
 }
 
 .card h2 {
