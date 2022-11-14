@@ -49,7 +49,7 @@ const MainLayout = () => {
                 <Content style={{minHeight: getWindowHeight().innerHeight}}>
                   <RoutesPage/>
                 </Content>
-                <Footer style={{background:"#001529",color:"#fff",display:"flex",justifyContent:"space-around"}}>Footer</Footer>
+                <Footer style={{background:"#001529",color:"#fff",display:"flex",justifyContent:"space-around"}}>Design By Wan</Footer>
               </Col>
             </Row>
           </Layout>

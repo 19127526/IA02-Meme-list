@@ -2,7 +2,7 @@ import {useNavigate} from "react-router-dom";
 
 import Container from 'react-bootstrap/Container';
 import {Col, Row} from "react-bootstrap";
-import {FileSearchOutlined, GithubOutlined, HistoryOutlined, ProjectOutlined, EditOutlined,HomeOutlined} from "@ant-design/icons";
+import {FormOutlined, EditOutlined,HomeOutlined} from "@ant-design/icons";
 import {Menu} from "antd";
 
 const getItem = (label, key, icon, children, type) => {
@@ -43,6 +43,8 @@ const AsideComponent=({onClose})=>{
                 onClick={() => setNavigate("/search")}/>),
               getItem(<div onClick={() => setNavigate('/click')}>CLick</div>, '3', <EditOutlined
                 onClick={() => setNavigate("/search")}/>),
+              getItem(<div onClick={() => setNavigate('/form')}>Form</div>, '4',  <FormOutlined
+                onClick={() => setNavigate("/form")}/>),
             ]}
           />
         </Col>
