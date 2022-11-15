@@ -64,7 +64,7 @@
     "prettier": "^2.7.1"
   },
   "lint-staged": {
-    "src/layouts/*.{js,jsx}": [
+    "src/**/*.{js,jsx}": [
       "eslint --config ./.eslintrc.json --ext js --ext jsx --ext"
     ]
   }

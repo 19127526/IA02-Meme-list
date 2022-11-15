@@ -47,7 +47,7 @@ function MainLayout() {
                     {
                       className: "trigger",
                       style: {
-                        fontSize: "20px",
+                        fontSize: "21px",
                         margin: "20px",
                         color: "white"
                       },
