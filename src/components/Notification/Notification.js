@@ -1,12 +1,10 @@
-import {notification} from 'antd';
+import { notification } from "antd";
 
-
-const Notification=(title,description)=>{
+const Notification = (title, description) => {
   return notification.success({
     message: title,
-    description:description,
+    description,
   });
-}
+};
 
-export default Notification
-
+export default Notification;

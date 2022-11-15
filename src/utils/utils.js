@@ -1,4 +1,5 @@
-export const getWindowHeight = () => {
-  const {innerHeight} = window;
-  return {innerHeight};
-}
+const getWindowHeight = () => {
+  const { innerHeight } = window;
+  return { innerHeight };
+};
+export default getWindowHeight;
