@@ -26,7 +26,7 @@ function MainLayout() {
             width="300px"
             bodyStyle={{
               background: `#001529`,
-              color: `#fff`,
+              color: `#fff`
             }}
           >
             <AsideComponent onClose={onClose} />
@@ -39,7 +39,7 @@ function MainLayout() {
                   style={{
                     padding: 0,
                     display: "flex",
-                    justifyContent: "space-between",
+                    justifyContent: "space-between"
                   }}
                 >
                   {React.createElement(
@@ -49,9 +49,9 @@ function MainLayout() {
                       style: {
                         fontSize: "20px",
                         margin: "20px",
-                        color: "white",
+                        color: "white"
                       },
-                      onClick: () => setCollapsed(!collapsed),
+                      onClick: () => setCollapsed(!collapsed)
                     }
                   )}
                 </Header>
@@ -63,7 +63,7 @@ function MainLayout() {
                     background: "#001529",
                     color: "#fff",
                     display: "flex",
-                    justifyContent: "space-around",
+                    justifyContent: "space-around"
                   }}
                 >
                   Design By Wan

@@ -43,7 +43,7 @@ function ClickPage() {
             style={{
               background: "#001529",
               border: "solid #001529",
-              marginTop: "10px",
+              marginTop: "10px"
             }}
             loading={loading}
             onClick={() => {

@@ -11,7 +11,7 @@ const pageIndex = 6;
 function HomePage() {
   const { data, error, isLoading } = useQuery("meme", getMemeApi, {
     cacheTime: Infinity,
-    refetchOnWindowFocus: false,
+    refetchOnWindowFocus: false
   });
   const [page, setPage] = useState(1);
   const currentIndexPage = pageIndex * page;

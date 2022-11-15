@@ -6,32 +6,32 @@ const { Option } = Select;
 const formItemLayout = {
   labelCol: {
     xs: {
-      span: 24,
+      span: 24
     },
     sm: {
-      span: 8,
-    },
+      span: 8
+    }
   },
   wrapperCol: {
     xs: {
-      span: 24,
+      span: 24
     },
     sm: {
-      span: 16,
-    },
-  },
+      span: 16
+    }
+  }
 };
 const tailFormItemLayout = {
   wrapperCol: {
     xs: {
       span: 24,
-      offset: 0,
+      offset: 0
     },
     sm: {
       span: 16,
-      offset: 8,
-    },
-  },
+      offset: 8
+    }
+  }
 };
 
 function FormPage() {
@@ -41,7 +41,7 @@ function FormPage() {
     <Form.Item name="prefix" noStyle>
       <Select
         style={{
-          width: 70,
+          width: 70
         }}
       >
         <Option value="84">+84</Option>
@@ -60,7 +60,7 @@ function FormPage() {
   };
   const websiteOptions = autoCompleteResult.map((website) => ({
     label: website,
-    value: website,
+    value: website
   }));
   return (
     <Container>
@@ -93,7 +93,7 @@ function FormPage() {
             onFinish={onFinish}
             initialValues={{
               residence: ["zhejiang", "hangzhou", "xihu"],
-              prefix: "84",
+              prefix: "84"
             }}
             scrollToFirstError
           >
@@ -103,12 +103,12 @@ function FormPage() {
               rules={[
                 {
                   type: "email",
-                  message: "The input is not valid E-mail!",
+                  message: "The input is not valid E-mail!"
                 },
                 {
                   required: true,
-                  message: "Please input your E-mail!",
-                },
+                  message: "Please input your E-mail!"
+                }
               ]}
             >
               <Input />
@@ -120,8 +120,8 @@ function FormPage() {
               rules={[
                 {
                   required: true,
-                  message: "Please input your password!",
-                },
+                  message: "Please input your password!"
+                }
               ]}
               hasFeedback
             >
@@ -136,7 +136,7 @@ function FormPage() {
               rules={[
                 {
                   required: true,
-                  message: "Please confirm your password!",
+                  message: "Please confirm your password!"
                 },
                 ({ getFieldValue }) => ({
                   validator(_, value) {
@@ -148,8 +148,8 @@ function FormPage() {
                         "The two passwords that you entered do not match!"
                       )
                     );
-                  },
-                }),
+                  }
+                })
               ]}
             >
               <Input.Password />
@@ -163,8 +163,8 @@ function FormPage() {
                 {
                   required: true,
                   message: "Please input your nickname!",
-                  whitespace: true,
-                },
+                  whitespace: true
+                }
               ]}
             >
               <Input />
@@ -176,14 +176,14 @@ function FormPage() {
               rules={[
                 {
                   required: true,
-                  message: "Please input your phone number!",
-                },
+                  message: "Please input your phone number!"
+                }
               ]}
             >
               <Input
                 addonBefore={prefixSelector}
                 style={{
-                  width: "100%",
+                  width: "100%"
                 }}
               />
             </Form.Item>
@@ -194,8 +194,8 @@ function FormPage() {
               rules={[
                 {
                   required: true,
-                  message: "Please input website!",
-                },
+                  message: "Please input website!"
+                }
               ]}
             >
               <AutoComplete
@@ -213,8 +213,8 @@ function FormPage() {
               rules={[
                 {
                   required: true,
-                  message: "Please input Intro",
-                },
+                  message: "Please input Intro"
+                }
               ]}
             >
               <Input.TextArea showCount maxLength={100} />
@@ -226,8 +226,8 @@ function FormPage() {
               rules={[
                 {
                   required: true,
-                  message: "Please select gender!",
-                },
+                  message: "Please select gender!"
+                }
               ]}
             >
               <Select placeholder="select your gender">
@@ -249,8 +249,8 @@ function FormPage() {
                     rules={[
                       {
                         required: true,
-                        message: "Please input the captcha you got!",
-                      },
+                        message: "Please input the captcha you got!"
+                      }
                     ]}
                   >
                     <Input />
@@ -270,8 +270,8 @@ function FormPage() {
                   validator: (_, value) =>
                     value
                       ? Promise.resolve()
-                      : Promise.reject(new Error("Should accept agreement")),
-                },
+                      : Promise.reject(new Error("Should accept agreement"))
+                }
               ]}
               /* eslint-disable-next-line react/jsx-props-no-spreading */
               {...tailFormItemLayout}

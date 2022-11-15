@@ -9,9 +9,9 @@ function CardComponent({ name, img, id }) {
     loop: true,
     to: [
       { opacity: 1, color: "#ffaaee" },
-      { opacity: 0, color: "rgb(14,26,19)" },
+      { opacity: 0, color: "rgb(14,26,19)" }
     ],
-    from: { opacity: 0, color: "red" },
+    from: { opacity: 0, color: "red" }
   });
 
   return (
@@ -22,7 +22,7 @@ function CardComponent({ name, img, id }) {
             margin: "7px -2px 0px  0px",
             width: "100%",
             height: "500px",
-            objectFit: "contain",
+            objectFit: "contain"
           }}
           src={img}
         />
@@ -31,7 +31,7 @@ function CardComponent({ name, img, id }) {
         <Card.Title
           style={{
             borderTop: "1px solid black",
-            borderBottom: "1px solid black",
+            borderBottom: "1px solid black"
           }}
         >
           <animated.div style={styles}>{name}</animated.div>

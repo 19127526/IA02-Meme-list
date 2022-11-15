@@ -11,7 +11,7 @@ const getItem = (label, key, icon, children, type) => {
     icon,
     children,
     label,
-    type,
+    type
   };
 };
 
@@ -31,7 +31,7 @@ function AsideComponent({ onClose }) {
           >
             <HomeOutlined
               style={{
-                fontSize: "56px",
+                fontSize: "56px"
               }}
               onClick={() => setNavigate("")}
             />
@@ -60,7 +60,7 @@ function AsideComponent({ onClose }) {
                 <div onClick={() => setNavigate("/form")}>Form</div>,
                 "4",
                 <FormOutlined onClick={() => setNavigate("/form")} />
-              ),
+              )
             ]}
           />
         </Col>
